@@ -1,0 +1,2 @@
+model_checkpoint_path: "prelearn_net_init_weights"
+all_model_checkpoint_paths: "prelearn_net_init_weights"

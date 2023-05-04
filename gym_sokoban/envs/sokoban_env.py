@@ -5,6 +5,7 @@ from gym.spaces import Box
 from .room_utils import generate_room
 from .render_utils import room_to_rgb, room_to_tiny_world_rgb
 import numpy as np
+from copy import deepcopy
 
 
 class SokobanEnv(gym.Env):
@@ -219,6 +220,13 @@ class SokobanEnv(gym.Env):
 
         starting_observation = self.render(render_mode)
         return starting_observation
+
+    def get_state_snapshot(self):
+        return deepcopy((self.room_fixed, self.room_state, self.box_mapping, self.player_position, 
+                self.num_env_steps, self.reward_last, self.boxes_on_target))
+
+    def set_state(self, snapshot):
+        self.room_fixed, self.room_state, self.box_mapping, self.player_position, self.num_env_steps, self.reward_last, self.boxes_on_target = deepcopy(snapshot)
 
     def render(self, mode='human', close=None, scale=1):
         assert mode in RENDERING_MODES
