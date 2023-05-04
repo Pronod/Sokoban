@@ -1,3 +1,7 @@
+# Experiments
+
+Main algorithm implementation and conducted experiments can be found in Monte-Carlo tree.ipynb
+
 # gym-sokoban 
 [Sokoban](https://en.wikipedia.org/wiki/Sokoban) is Japanese for warehouse keeper and a traditional video game.
 The game is a transportation puzzle, where the player has to push all boxes in the room on the storage locations/ targets.
